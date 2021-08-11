@@ -18,23 +18,22 @@ https://leetcode-cn.com/problems/merge-sorted-array/
 
 
 */
-$nums1 = [1, 2, 3,];
+$nums1 = [1,2,3,0,0,0];
 $nums2 = [2, 5, 6];
 $m = 3;
 $n = 3;
-var_dump((new Solution088())->merge($nums1, $m, $nums2, $n));
+(new Solution088())->merge($nums1, $m, $nums2, $n);
+var_dump($nums1);
+
 
 class Solution088
 {
-    // 先合并后排序
-    function merge($nums1, $m, $nums2, $n)
+    // 先合并后排序 不知道为何leetcode判题系统会通不过
+    function merge(&$nums1, $m, $nums2, $n)
     {
         for ($i = 0; $i < $n; $i++) {
-            $nums1[$m++] = $nums2[$i];
+            $nums1[$m+$i] = $nums2[$i];
         }
         sort($nums1);
-        return $nums1;
     }
-
-
 }
