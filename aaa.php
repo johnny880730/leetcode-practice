@@ -19,7 +19,7 @@ function inOrder($node)
     if ($node == null) {
         return ;
     }
-    inOrder($node->left)
+    inOrder($node->left);
 
 
 }
