@@ -38,3 +38,20 @@ function fetchNode($head)
     echo PHP_EOL;
 }
 
+// 打印双向链表
+function printDoubleLinkedList($head) {
+    echo "Double Linked List: ";
+    $end = null;
+    while ($head != null) {
+        echo $head->value . ' ';
+        $end = $head;
+        $head = $head->next;
+    }
+    echo "| ";
+    while ($end != null) {
+        echo $end->value . ' ';
+        $end = $end->last;
+    }
+    echo PHP_EOL;
+}
+
