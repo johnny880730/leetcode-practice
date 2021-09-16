@@ -19,6 +19,7 @@ class Code_02_SubArrMaxSum
         for ($i = 0, $len = count($arr); $i < $len; $i++) {
             $cur += $arr[$i];
             $max = max($max, $cur);
+            // cur小于0的话更新为0
             $cur = $cur > 0 ? $cur : 0;
         }
         return $max;
